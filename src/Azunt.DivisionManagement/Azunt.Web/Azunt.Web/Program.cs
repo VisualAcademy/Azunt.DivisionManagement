@@ -1,3 +1,4 @@
+using Azunt.DivisionManagement; 
 using Azunt.Web.Client.Pages;
 using Azunt.Web.Components;
 using Azunt.Web.Components.Account;
@@ -5,7 +6,6 @@ using Azunt.Web.Data;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Azunt.DivisionManagement; 
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,6 +37,10 @@ builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.Requ
     .AddDefaultTokenProviders();
 
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
+
+// 디비전 관리: 기본 CRUD 교과서 코드
+builder.Services.AddDependencyInjectionContainerForDivisionApp(connectionString);
+builder.Services.AddTransient<DivisionDbContextFactory>();
 
 var app = builder.Build();
 
