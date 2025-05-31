@@ -1,5 +1,4 @@
-using Azunt.DivisionManagement; 
-using Azunt.Web.Client.Pages;
+using Azunt.DivisionManagement;
 using Azunt.Web.Components;
 using Azunt.Web.Components.Account;
 using Azunt.Web.Data;
@@ -46,7 +45,7 @@ builder.Services.AddTransient<DivisionDbContextFactory>();
 
 var app = builder.Build();
 
-DivisionsTableBuilder.Run(app.Services, forMaster: true); 
+DivisionsTableBuilder.Run(app.Services, forMaster: true);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
