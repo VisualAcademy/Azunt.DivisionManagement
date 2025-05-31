@@ -5,6 +5,7 @@ using Azunt.Web.Data;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Azunt.DivisionManagement; 
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -38,6 +39,8 @@ builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.Requ
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
 
 var app = builder.Build();
+
+DivisionsTableBuilder.Run(app.Services, forMaster: true); 
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
