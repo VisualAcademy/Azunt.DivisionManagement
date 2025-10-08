@@ -12,7 +12,7 @@
         <ProjectReference Include="..\Azunt.Web.Client\Azunt.Web.Client.csproj" />
 
         <PackageReference Include="Azunt" Version="1.1.8" />
-        <PackageReference Include="Azunt.Components" Version="1.0.3" />
+        <PackageReference Include="Azunt.Components" Version="1.0.4" />
         <PackageReference Include="Azure.Storage.Blobs" Version="12.24.1" />
         <PackageReference Include="Dapper" Version="2.1.66" />
         <PackageReference Include="EPPlus" Version="6.0.5" />
